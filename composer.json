@@ -1,0 +1,33 @@
+{
+	"name": "dnj/composer-gateway",
+	"license": "MIT",
+	"require": {
+		"php": "^7.4|^8.0",
+		"gmostafa/php-graphql-client": "^1.13",
+		"laravel/laravel": "^8.6.6"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^0.12.85",
+		"friendsofphp/php-cs-fixer": "^3.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"dnj\\ComposerGateway\\": "src/"
+		}
+	},
+	"scripts": {
+		"test:types": "vendor/bin/phpstan analyse",
+		"test:codestyle": "vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no",
+		"test": [
+			"@test:types",
+			"@test:codestyle"
+		]
+	},
+	"config": {
+		"preferred-install": "dist",
+		"sort-packages": true,
+		"optimize-autoloader": true
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}
