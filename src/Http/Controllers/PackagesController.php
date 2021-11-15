@@ -14,6 +14,7 @@ class PackagesController extends Controller
 
         return new Gitlab\Project($instanceUrl, [
             'Authorization' => strval($request->header('Authorization')),
+            'Private-Token' => strval($request->header('Private-Token')),
         ]);
     }
 
